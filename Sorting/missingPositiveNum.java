@@ -2,7 +2,7 @@ package Sorting;
 
 public class missingPositiveNum {
     public static void main(String[] args) {
-        int[] arr = { 1,2,3,4 };
+        int[] arr = { 1, 2, 3, 4 };
         int i = 0;
 
         // Cyclic Sort
@@ -26,7 +26,8 @@ public class missingPositiveNum {
             }
         }
 
-        // Edge case
+        // Edge case --> if postive interger are avaialable in array it print length+1
+        // element
         System.out.println("Missing Positive number: " + (arr.length + 1));
     }
 }
