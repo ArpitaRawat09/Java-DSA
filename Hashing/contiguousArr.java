@@ -1,21 +1,29 @@
 package Hashing;
 
-import java.util.*;
+import java.util.HashMap;
 
-public class lengthOfSubArrEquals {
+public class contiguousArr {
     public static void main(String[] args) {
-        int[] arr = { 10, 5, 2, 7, 1, 9 };
-        int sum = 0, k = 15, longest = 0;
+        int[] arr = { 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0 };
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0)
+                arr[i] = -1;
+        }
 
+        int k = 0, sum = 0, longest = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(sum, -1);
 
         for (int i = 0; i < arr.length; i++) {
-            sum = sum + arr[i];
+            sum += arr[i];
+
+            // agar key exist karti h to y wala code chalega 
+
             if (map.containsKey(sum - k)) {
                 longest = Math.max(longest, i - map.get(sum - k));
             }
 
+            // warna map m sum or index store ho jayega 
             if (!map.containsKey(sum)) {
                 map.put(sum, i);
             }

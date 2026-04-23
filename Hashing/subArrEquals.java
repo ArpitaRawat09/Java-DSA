@@ -4,8 +4,8 @@ import java.util.*;
 
 public class subArrEquals {
     public static void main(String[] args) {
-        int[] arr = { 10, 2, -2, -20, 10 };
-        int k = -10;
+        int[] arr = {3, 4, 7, 2, -3, 1, 4, 2};
+        int k = 7;
 
         int sum = 0, count = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
