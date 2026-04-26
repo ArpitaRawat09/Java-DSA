@@ -2,8 +2,7 @@ package LinkedList;
 
 import java.util.*;
 
-public class insertAtFirst {
-    // declaring a Node
+public class deleteAtLast {
     static class Node {
         int val;
         Node next;
@@ -14,7 +13,6 @@ public class insertAtFirst {
         }
     }
 
-    // Linked List
     static class LinkedList {
         Node head;
         int size;
@@ -24,7 +22,7 @@ public class insertAtFirst {
             this.size = 0;
         }
 
-        // insert at first
+        // insert at first...
         void insertAtFirst(int val) {
             this.size++;
             Node newNode = new Node(val);
@@ -33,14 +31,35 @@ public class insertAtFirst {
                 this.head = newNode;
                 return;
             }
+
             newNode.next = this.head;
             this.head = newNode;
+        }
+
+        // delete at last....
+        void deleteAtLast() {
+            if (this.head == null) {
+                System.out.println("====Empty List ===");
+                return;
+            }
+
+            if (this.head.next == null) {
+                this.head = null;
+                return;
+            }
+
+            Node temp = this.head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
         }
 
         void printLL() {
             Node temp = this.head;
             if (temp == null) {
-                System.out.println("Empty List...");
+                System.out.println("Empty List....");
+                return;
             }
 
             while (temp != null) {
@@ -49,23 +68,22 @@ public class insertAtFirst {
             }
             System.out.println("null");
         }
+
     }
 
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
 
-        // khali List print
-        System.out.println("====Empty List =====");
+        obj.insertAtFirst(11);
+        obj.insertAtFirst(22);
+        obj.insertAtFirst(33);
+        obj.insertAtFirst(44);
+        obj.insertAtFirst(55);
         obj.printLL();
 
-        // insert at first
-        System.out.println("\n ==== Insert At First =====");
-        obj.insertAtFirst(10);
-        obj.insertAtFirst(20);
-        obj.insertAtFirst(30);
-        obj.insertAtFirst(40);
-        obj.insertAtFirst(50);
+        obj.deleteAtLast();
         obj.printLL();
 
     }
+
 }
